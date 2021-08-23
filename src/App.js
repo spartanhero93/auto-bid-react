@@ -1,22 +1,32 @@
+import {useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [response, handleResponse] = useState('NA')
+
+  async function retrieveData() {
+    try {
+      const res = await fetch('http://localhost:3004/test')
+      const {data} = await res.json()
+      handleResponse(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Hello</h1>
+
+        <div>
+          <h2>Please press the button</h2>
+          <h3>Info from button <span>{response}</span></h3>
+        </div>
+        <div>
+          <button onClick={() => retrieveData()}>Fetch data</button>
+        </div>
       </header>
     </div>
   );
