@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import Content from '../Components/Content'
+import Content from './Content'
 
 const Container = styled.div`
   display: flex;
