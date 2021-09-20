@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import Explore from '../Components/Explore'
+import Explore from '../Routes/Explore'
 
 const Container = styled.div`
   padding: 1rem 2rem;

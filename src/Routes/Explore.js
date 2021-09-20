@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
+import SingleCar from '../Components/SingleCar'
+
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -11,10 +13,7 @@ const Container = styled.div`
     }
   }
 `
-const CarContainer = styled.div`
-  padding: 1rem 2rem;
 
-`
 
 export default function Explore () {
   const [data, handleData] = useState([])
@@ -38,13 +37,7 @@ export default function Explore () {
         {data.length > 0 ? (
           data.map(item => {
             return (
-              <CarContainer>
-                <h2>
-                  {item.make} {item.model}
-                </h2>
-                <h3>Starting bid ${item.startingBid}</h3>
-                <img src={item.pictures[0]} alt={item.make} />
-              </CarContainer>
+              <SingleCar item={item} />
             )
           })
         ) : (
