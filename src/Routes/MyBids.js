@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -31,13 +31,13 @@ export default function MyBids(){
         {data.length > 0 ? (
           data.map(item => {
             return (
-              <CarContainer>
+              <div>
                 <h2>
                   {item.make} {item.model}
                 </h2>
                 <h3>Starting bid ${item.startingBid}</h3>
                 <img src={item.pictures[0]} alt={item.make} />
-              </CarContainer>
+              </div>
             )
           })
         ) : (
