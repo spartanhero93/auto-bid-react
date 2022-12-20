@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import Content from './Content'
+import Navbar from './Navbar'
 
 const Container = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ function Sidebar() {
   return(
     <Container>
       <ul>
+        <Navbar />
         <li onClick={() => handleSelected('Account')}>Account</li>
         <li onClick={() => handleSelected('Explore')}>Explore</li>
         <li onClick={() => handleSelected('Ending Soon')}>Ending Soon</li>
