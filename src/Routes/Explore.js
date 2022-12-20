@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import RenderCars from '../Components/RenderCars'
 
-import SingleCar from '../Components/SingleCar'
 
 const Container = styled.div`
   display: flex;
@@ -34,15 +34,7 @@ export default function Explore () {
     <div>
       <h1>Explore all the car bids!</h1>
       <Container>
-        {data.length > 0 ? (
-          data.map(item => {
-            return (
-              <SingleCar item={item} />
-            )
-          })
-        ) : (
-          <h1>Loading...</h1>
-        )}
+        <RenderCars carArray={data}/>
       </Container>
     </div>
   )
